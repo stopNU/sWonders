@@ -1,7 +1,14 @@
 <div class="landingPage" (window:resize)="onResize($event)" [style.height.px]="wHeight">
 	<div>
 		<h3>Are you ready bitch!?</h3>
-		<input type="text" class="form-control" name="username" value="" placeholder="Your username...">
-		<button type="button" class="btn btn-success btn-large" [routerLink]="['/7wonders']">Start the game!</button>
+		<form (ngSubmit)="onSubmit($event)" #wonderForm="ngForm">
+			<input type="text" class="form-control" name="username" value="" placeholder="Your username..." required>
+			<button type="button" class="btn btn-success" (click)="toggleWonders()">Choose wonder</button>
+			<div [hidden]="!showWonder">
+				<h1>Wonder Selection</h1>
+			</div>
+			<button type="submit" class="btn btn-success" [disabled]="!wonderForm.form.valid">Start the game!</button>
+		</form>
 	</div>
 </div>
+

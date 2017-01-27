@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RootComponent} from './routes';
+import { FormsModule }   from '@angular/forms';
 
 import {SharedModule} from './shared/';
 import {GameModule} from './game/';
@@ -13,7 +14,8 @@ import {FooterComponent} from './footer';
   imports: [
     BrowserModule,
     SharedModule,
-    GameModule
+    GameModule,
+    FormsModule,
   ],
   declarations: [
     RootComponent,
