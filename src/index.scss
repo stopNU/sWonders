@@ -110,3 +110,36 @@ a {
   font-size: 1.5rem;
   margin: 0 0 2rem 0;
 }
+
+.landingPage{
+  background-image: url('/assets/background-landing.jpg');
+  background-size: cover;
+  div {
+    background: #f7f7f7;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #656565;
+    border: 1px solid #a5a5a5;
+    max-width: 320px;
+    margin: 0px auto;
+    position: relative;
+    top: 50%;
+    h3{
+      text-align: center;
+    }
+    > * {
+      display: block;
+      margin: 15px auto;
+    }
+  }
+  .btn{
+    -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+      text-transform: uppercase;
+    font-weight: 700;
+  }
+}

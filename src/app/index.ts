@@ -6,7 +6,7 @@ import {TechsModule} from './techs';
 
 import {MainComponent} from './main';
 import {HeaderComponent} from './header';
-import {TitleComponent} from './title';
+import {LandingComponent} from './landing';
 import {FooterComponent} from './footer';
 
 @NgModule({
@@ -19,7 +19,7 @@ import {FooterComponent} from './footer';
     RootComponent,
     MainComponent,
     HeaderComponent,
-    TitleComponent,
+    LandingComponent,
     FooterComponent
   ],
   bootstrap: [RootComponent]
