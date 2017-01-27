@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+
 import {MainComponent} from './main';
+import {GameComponent} from './game/game.component';
 
 @Component({
   selector: 'fountain-root',
@@ -12,6 +14,10 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent
+  },
+  {
+    path: '7wonders',
+    component: GameComponent
   }
 ];
 

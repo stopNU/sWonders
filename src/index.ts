@@ -8,6 +8,7 @@ import './index.scss';
 
 import {enableProdMode} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
 import {AppModule} from './app';
 
 declare var process: any;
