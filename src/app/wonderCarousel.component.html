@@ -1,0 +1,17 @@
+
+<div class="carousel">
+<h1>Wonder Selection</h1>
+<ul class="slides">
+
+    <li *ngFor="let wonder of wonders">
+      <h2>{{wonder.title}}</h2>
+      <img src="{{wonder.url}}" alt="">
+      <button type="button" class="btn btn-success" (click)="selectWonder(wonder.id, wonder.title)">Select</button>
+    </li>
+
+  </ul>
+  <div class="text-center">
+    <h3>Selected Wonder is: {{selectedWonder.name || 'No wonder selected'}}</h3>
+    <button type="button" class="btn btn-danger" (click)="closeWonder()">Save</button>
+  </div>
+</div>

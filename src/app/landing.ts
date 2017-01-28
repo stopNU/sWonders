@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'wonders-landing',
-  template: require('./landing.html')
+  template: require('./landing.html'),
+  styles: [ String(require('./landing.scss')) ]
 })
 
 export class LandingComponent {

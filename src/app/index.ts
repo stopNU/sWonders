@@ -8,6 +8,7 @@ import {GameModule} from './game/';
 
 import {MainComponent} from './main';
 import {LandingComponent} from './landing';
+import {WonderCarousalComponent} from './wonderCarousel.component';
 import {FooterComponent} from './footer';
 
 @NgModule({
@@ -21,7 +22,8 @@ import {FooterComponent} from './footer';
     RootComponent,
     MainComponent,
     LandingComponent,
-    FooterComponent
+    FooterComponent,
+    WonderCarousalComponent
   ],
   exports: [
   ],
