@@ -15,7 +15,7 @@ export class WonderCarousalComponent {
 
 	closeWonder(){
 		// Check for selected properties
-		if(this.selectedWonder["id"]){
+		if(this.selectedWonder["id"] >= 0){
 			this.newWonderValue.emit({
 				value: this.showWonder // Sending back same value, must be easier way to do - Service?
 			})
