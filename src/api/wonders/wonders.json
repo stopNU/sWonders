@@ -1,5 +1,5 @@
 {
-	"wonders":
+	"data":
 	[
 		{ "id": 0, "title": "Babylon", "url": "/assets/image-slider2.jpg" },
 		{ "id": 1, "title": "Giza", "url": "/assets/image-slider2.jpg" },

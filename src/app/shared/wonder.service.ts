@@ -14,10 +14,10 @@ export class WonderService {
   private _url = 'api/wonders/';
   constructor(private _http: Http){}
 
-  getWonders(): Observable<Response> {
+  getWonders(): Observable<WondersInterface[]> {
   	console.log("getWonders called");
     return this._http.get(this._url + 'wonders.json')
-    	.map((response: Response) => response.json())
+    	.map((response: Response) => <WondersInterface[]>response.json().data)
       .do(data => console.log(JSON.stringify(data)))
     	.catch(this.handleError);
     
