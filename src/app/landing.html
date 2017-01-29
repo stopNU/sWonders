@@ -7,9 +7,9 @@
 		<h3>Are you ready!?</h3>
 		<form (ngSubmit)="onSubmit($event)" #wonderForm="ngForm">
 			<input type="text" class="form-control" id="username" name="username" value="" placeholder="Your username..." required>
-			<input type="hidden" name="selectedWonder" id="chosenWonder" [value]="chosenWonder">
+			<input type="hidden" name="selectedWonder" id="chosenWonder" [value]="chosenWonder" required>
 			<button type="button" class="btn btn-success" (click)="toggleWonders()">Choose wonder</button>
-			<button type="submit" class="btn btn-success" [disabled]="!wonderForm.form.valid">Start the game!</button>
+			<button type="submit" class="btn btn-success">Start the game!</button>
 		</form>
 	</div>
 </div>

@@ -25,7 +25,7 @@ export class LandingComponent {
 	onSubmit(e){
 		console.log("Submitted: " + e.target[0].value);
 		console.log("Submitted: " + e.target[1].value);
-		e.preventDefault();
+		//e.preventDefault();
 	}
 
 	wonderReturned(wonderId){

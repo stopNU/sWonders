@@ -27,6 +27,9 @@ $numberOfWonders: 3;
 .wonder{
     padding: 10px;
     background-color: gainsboro;
+    &.active{
+        background-color: red;
+    }
     border-radius: 5px;
 }
 

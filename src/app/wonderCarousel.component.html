@@ -4,7 +4,7 @@
 <ul class="slides" *ngIf="wonders">
 
     <li *ngFor="let wonder of wonders">
-      <div class="wonder">
+      <div class="wonder" [class.active]="wonder.id === selectedWonder.id">
         <h2>{{wonder.title}}</h2>
         <img src="{{wonder.url}}" alt="">
         <button type="button" class="btn btn-success" (click)="selectWonder(wonder.id, wonder.title)">Select</button>
@@ -13,7 +13,7 @@
 
   </ul>
   <div class="text-center">
-    <h3>Selected Wonder is: {{selectedWonder.name || 'No wonder selected'}}</h3>
+    <!--<h3>Selected Wonder is: {{selectedWonder.name || 'No wonder selected'}}</h3>-->
     <button type="button" class="btn btn-danger" (click)="closeWonder()">Save</button>
   </div>
 </div>
