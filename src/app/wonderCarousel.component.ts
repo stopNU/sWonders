@@ -1,4 +1,6 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+
+import {WonderService} from './shared/wonder.service';
 
 import {WondersInterface} from './wonderCarousel.interface';
 
@@ -8,35 +10,39 @@ import {WondersInterface} from './wonderCarousel.interface';
   styles: [ String(require('./wonderCarousel.component.scss')) ]
 })
 
-export class WonderCarousalComponent {
+export class WonderCarousalComponent implements OnInit {
 	selectedWonder = {};
-	@Input() showWonder;
+	errorMessage: string;
+	wonders: any;
 	@Output() newWonderValue = new EventEmitter(); //To connect to toggleWonder()
+
+
+	constructor(private _wonderService: WonderService){}
+
+	ngOnInit(): void{
+		console.log("OnInit");
+		this._wonderService.getWonders()
+			.subscribe(
+				wonders => this.wonders = wonders,
+				error => this.errorMessage = <any>error
+			);
+		console.log(this.wonders);
+	}
 
 	closeWonder(){
 		// Check for selected properties
-		if(this.selectedWonder["id"] >= 0){
+		if(this.selectedWonder['id'] >= 0){
 			this.newWonderValue.emit({
-				value: this.showWonder // Sending back same value, must be easier way to do - Service?
+				value: this.selectedWonder['id']
 			})
 		}
 	}
 
-	//images data to be bound to the template
-	public wonders = WONDERS;
 
 	selectWonder(id, name){
-		this.selectedWonder["id"] = id;
-		this.selectedWonder["name"] = name;
+		this.selectedWonder['id'] = id;
+		this.selectedWonder['name'] = name;
 	}
 
 }
 
-//IMAGES array implementing Image interface
-var WONDERS: WondersInterface[] = [
-  { "id": 0, "title": "We are covered", "url": "/assets/image-slider2.jpg" },
-  { "id": 1, "title": "We are covered2", "url": "/assets/image-slider2.jpg" },
-  { "id": 2, "title": "We are covered3", "url": "/assets/image-slider2.jpg" },
-  { "id": 3, "title": "We are covered4", "url": "/assets/image-slider2.jpg" },
-  { "id": 4, "title": "We are covered5", "url": "/assets/image-slider2.jpg" }
-];

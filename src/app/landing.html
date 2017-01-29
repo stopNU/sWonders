@@ -1,12 +1,13 @@
 <div id="overlay" [hidden]="!showWonder"></div>
-<wonders-carousel [hidden]="!showWonder" [showWonder]="showWonder" (newWonderValue)="toggleWonders($event)"></wonders-carousel>
+<wonders-carousel [hidden]="!showWonder" (newWonderValue)="wonderReturned($event.value)"></wonders-carousel>
 
 
 <div class="landingPage" (window:resize)="onResize($event)" [style.height.px]="wHeight">
 	<div>
-		<h3>Are you ready bitch!?</h3>
+		<h3>Are you ready!?</h3>
 		<form (ngSubmit)="onSubmit($event)" #wonderForm="ngForm">
-			<input type="text" class="form-control" name="username" value="" placeholder="Your username..." required>
+			<input type="text" class="form-control" id="username" name="username" value="" placeholder="Your username..." required>
+			<input type="hidden" name="selectedWonder" id="chosenWonder" [value]="chosenWonder">
 			<button type="button" class="btn btn-success" (click)="toggleWonders()">Choose wonder</button>
 			<button type="submit" class="btn btn-success" [disabled]="!wonderForm.form.valid">Start the game!</button>
 		</form>

@@ -1,0 +1,10 @@
+{
+	"wonders":
+	[
+		{ "id": 0, "title": "Babylon", "url": "/assets/image-slider2.jpg" },
+		{ "id": 1, "title": "Giza", "url": "/assets/image-slider2.jpg" },
+  		{ "id": 2, "title": "Olympia", "url": "/assets/image-slider2.jpg" },
+  		{ "id": 3, "title": "Alexandria", "url": "/assets/image-slider2.jpg" },
+  		{ "id": 4, "title": "Rhodes", "url": "/assets/image-slider2.jpg" }
+	]
+}

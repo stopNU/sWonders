@@ -6,24 +6,28 @@ $numberOfWonders: 3;
     position: absolute;
     z-index: 101;
     color: #fff;
+    img{
+        display:block;
+        width:100%;
+        max-width:100%;
+    }
 }
 .slides{
     list-style:none;
     position:relative; 
     overflow:hidden; 
+    > li{
+        position:relative;
+        float:left;
+        width: 100% / $numberOfWonders; 
+        padding: 1% 3%;
+        text-align: center;
+    }
 }
-
-.slides > li{
-    position:relative;
-    float:left;
-    width: 100% / $numberOfWonders; 
-    padding: 0 3%;
-    text-align: center;
-}
-.carousel img{
-    display:block;
-    width:100%;
-    max-width:100%;
+.wonder{
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 5px;
 }
 
 /*

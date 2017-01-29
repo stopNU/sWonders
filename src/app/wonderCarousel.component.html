@@ -1,12 +1,14 @@
 
 <div class="carousel">
 <h1>Wonder Selection</h1>
-<ul class="slides">
+<ul class="slides" *ngIf="wonders">
 
-    <li *ngFor="let wonder of wonders">
-      <h2>{{wonder.title}}</h2>
-      <img src="{{wonder.url}}" alt="">
-      <button type="button" class="btn btn-success" (click)="selectWonder(wonder.id, wonder.title)">Select</button>
+    <li *ngFor="let wonder of wonders.wonders">
+      <div class="wonder">
+        <h2>{{wonder.title}}</h2>
+        <img src="{{wonder.url}}" alt="">
+        <button type="button" class="btn btn-success" (click)="selectWonder(wonder.id, wonder.title)">Select</button>
+      </div>
     </li>
 
   </ul>

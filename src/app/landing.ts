@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
 export class LandingComponent {
 	headerHeight: number = 40;
 	showWonder: boolean = false;
+	chosenWonder: number;
 
 
 	public wHeight:number = (window.innerHeight - this.headerHeight);
@@ -22,8 +23,15 @@ export class LandingComponent {
 		this.wHeight = (e.target.innerHeight - this.headerHeight);
 	}
 	onSubmit(e){
+		console.log("Submitted: " + e.target[0].value);
+		console.log("Submitted: " + e.target[1].value);
 		e.preventDefault();
-		console.log(e);
+	}
+
+	wonderReturned(wonderId){
+		console.log(wonderId);
+		this.chosenWonder = wonderId;
+		this.toggleWonders();		
 	}
 
 	toggleWonders(){
